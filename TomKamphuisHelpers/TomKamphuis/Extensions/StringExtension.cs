@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using TomKamphuis.Helpers;
 using TomKamphuis.Validations;
 
 namespace TomKamphuis.Extensions
@@ -44,13 +46,15 @@ namespace TomKamphuis.Extensions
             }
 
             input = input.Replace(" ", "_");
+            input = input.Replace("&", "");
+            input = input.Replace("'", "");
+            input = input.Replace(";", "");
+            input = input.Replace(":", "");
+            input = input.Replace(",", "");
+            input = input.Replace(".", "");
+            input = input.Replace("^", "");
 
-            string decomposed = input.Normalize(NormalizationForm.FormD);
-            char[] filtered = decomposed
-                .Where(c => char.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
-                .ToArray();
-
-            return new String(filtered);
+            return StringHelper.RemoveSpecialCharactersFromString(input);
         }
 
         /// <summary>
@@ -63,7 +67,11 @@ namespace TomKamphuis.Extensions
                 throw new ArgumentNullException("input");
             }
 
-            return Regex.Replace(input, "<[^>]*>", string.Empty);
+            string output = Regex.Replace(input, "<[^>]*>", string.Empty);
+            output = WebUtility.HtmlDecode(output);
+            output = StringHelper.RemoveSpecialCharactersFromString(output);
+
+            return output;
         }
     }
 }
