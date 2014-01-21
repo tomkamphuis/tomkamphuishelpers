@@ -4,8 +4,14 @@ using System.Reflection;
 
 namespace TomKamphuis.Helpers
 {
+    /// <summary>
+    /// Class for enabling more enumeration functionality.
+    /// </summary>
     public class EnumHelper
     {
+        /// <summary>
+        /// Returns the data anotated description from an enumeration value.
+        /// </summary>
         public static string GetEnumDescription(Enum value)
         {
             FieldInfo fieldInfo = value.GetType().GetField(value.ToString());
