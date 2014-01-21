@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="ExtensionsTests\StringExtensionTests.cs" />
     <Compile Include="HelpersTests\EnumHelperTests.cs" />
+    <Compile Include="HelpersTests\StringHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

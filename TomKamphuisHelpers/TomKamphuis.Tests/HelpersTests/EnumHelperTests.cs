@@ -15,7 +15,7 @@ namespace TomKamphuis.Tests.HelpersTests
         }
 
         [TestMethod]
-        public void Method_Should_Return_Description_When_Enum_Contains_Description()
+        public void GetEnumDescription_Should_Return_Description_When_Enum_Contains_Description()
         {
             object currentEnum = Enum.GetValues(typeof(TestEnum)).GetValue(0);
             string enumDescription = EnumHelper.GetEnumDescription((TestEnum)currentEnum);
@@ -25,7 +25,7 @@ namespace TomKamphuis.Tests.HelpersTests
         }
 
         [TestMethod]
-        public void Method_Should_Return_Enum_Value_When_Enum_Contains_No_Description()
+        public void GetEnumDescription_Should_Return_Enum_Value_When_Enum_Contains_No_Description()
         {
             object currentEnum = Enum.GetValues(typeof(TestEnum)).GetValue(1);
             string enumDescription = EnumHelper.GetEnumDescription((TestEnum)currentEnum);
