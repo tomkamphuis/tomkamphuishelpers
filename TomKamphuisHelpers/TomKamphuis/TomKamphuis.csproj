@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Constants\RegexString.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Helpers\BoolHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Validations\StringValidation.cs" />
