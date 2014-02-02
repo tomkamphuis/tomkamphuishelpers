@@ -69,7 +69,11 @@ namespace TomKamphuis.Extensions
 
             string output = Regex.Replace(input, "<[^>]*>", string.Empty);
             output = WebUtility.HtmlDecode(output);
-            output = StringHelper.RemoveSpecialCharactersFromString(output);
+
+            if(!string.IsNullOrEmpty(output))
+            {
+                output = StringHelper.RemoveSpecialCharactersFromString(output);
+            }
 
             return output;
         }
