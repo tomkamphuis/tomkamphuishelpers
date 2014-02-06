@@ -1,4 +1,4 @@
-﻿namespace TomKamphuis.Constants
+﻿namespace TomKamphuis.Helper.Constants
 {
     /// <summary>
     /// Class for storing regular expression constants.

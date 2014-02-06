@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace TomKamphuis.Helpers
+namespace TomKamphuis.Helper.Helpers
 {
     /// <summary>
     /// Class for enabling more enumeration functionality.

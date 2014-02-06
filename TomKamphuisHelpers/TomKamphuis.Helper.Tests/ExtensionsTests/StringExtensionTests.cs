@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using TomKamphuis.Extensions;
+using TomKamphuis.Helper.Extensions;
 
-namespace TomKamphuis.ExtensionsTests.Tests
+namespace TomKamphuis.Helper.ExtensionsTests.Tests
 {
     [TestClass]
     public class StringExtensionTests

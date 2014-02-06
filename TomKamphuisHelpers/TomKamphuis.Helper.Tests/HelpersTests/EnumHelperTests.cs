@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TomKamphuis.Helpers;
+using TomKamphuis.Helper.Helpers;
 
-namespace TomKamphuis.Tests.HelpersTests
+namespace TomKamphuis.Helper.Tests.HelpersTests
 {
     [TestClass]
     public class EnumHelperTests

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using TomKamphuis.Constants;
+using TomKamphuis.Helper.Constants;
 
-namespace TomKamphuis.Validations
+namespace TomKamphuis.Helper.Validations
 {
     /// <summary>
     /// Class with all sorts of string validation methods.

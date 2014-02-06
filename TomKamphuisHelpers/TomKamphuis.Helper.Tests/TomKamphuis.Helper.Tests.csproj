@@ -6,8 +6,8 @@
     <ProjectGuid>{216FDA09-1575-48B0-845B-D95212C6EC4A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TomKamphuis.Tests</RootNamespace>
-    <AssemblyName>TomKamphuis.Tests</AssemblyName>
+    <RootNamespace>TomKamphuis.Helper.Tests</RootNamespace>
+    <AssemblyName>TomKamphuis.Helper.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -61,9 +61,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TomKamphuis\TomKamphuis.csproj">
+    <ProjectReference Include="..\TomKamphuis.Helper\TomKamphuis.Helper.csproj">
       <Project>{748dd694-bd8f-4c79-9c09-9da4b15785e9}</Project>
-      <Name>TomKamphuis</Name>
+      <Name>TomKamphuis.Helper</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

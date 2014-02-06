@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TomKamphuis.Helpers
+namespace TomKamphuis.Helper.Helpers
 {
     /// <summary>
     /// Class for extra boolean functionality.

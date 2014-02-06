@@ -7,8 +7,8 @@
     <ProjectGuid>{748DD694-BD8F-4C79-9C09-9DA4B15785E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TomKamphuis</RootNamespace>
-    <AssemblyName>TomKamphuis</AssemblyName>
+    <RootNamespace>TomKamphuis.Helper</RootNamespace>
+    <AssemblyName>TomKamphuis.Helper</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

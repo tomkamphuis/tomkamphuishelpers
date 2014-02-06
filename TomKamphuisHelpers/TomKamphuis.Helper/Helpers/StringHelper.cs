@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace TomKamphuis.Helpers
+namespace TomKamphuis.Helper.Helpers
 {
     /// <summary>
     /// Class for enabling more string functionality.

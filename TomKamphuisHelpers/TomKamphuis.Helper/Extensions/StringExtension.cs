@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using TomKamphuis.Helpers;
-using TomKamphuis.Validations;
+using TomKamphuis.Helper.Helpers;
+using TomKamphuis.Helper.Validations;
 
-namespace TomKamphuis.Extensions
+namespace TomKamphuis.Helper.Extensions
 {
     /// <summary>
     /// Methods for extending the standard string functionality.

@@ -1,9 +1,9 @@
 ﻿using System;
-using TomKamphuis.Helpers;
+using TomKamphuis.Helper.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace TomKamphuis.Tests.HelpersTests
+namespace TomKamphuis.Helper.Tests.HelpersTests
 {
     internal class MyCustomClass
     {
