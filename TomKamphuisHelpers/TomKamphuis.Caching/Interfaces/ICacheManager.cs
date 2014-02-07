@@ -30,6 +30,11 @@ namespace TomKamphuis.Caching.Interfaces
         void Remove(string key);
 
         /// <summary>
+        /// Clears the whole cache
+        /// </summary>
+        void Clear();
+
+        /// <summary>
         /// Get/Set the the given key and object
         /// </summary>
         object this[string key]

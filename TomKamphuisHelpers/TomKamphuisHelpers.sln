@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomKamphuis.Helper.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomKamphuis.Caching", "TomKamphuis.Caching\TomKamphuis.Caching.csproj", "{45FB2189-EF61-422D-94D0-2AD7ACBF8218}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomKamphuis.Caching.Tests", "TomKamphuis.Caching.Tests\TomKamphuis.Caching.Tests.csproj", "{7D0590B1-450B-4D08-974C-C7911D4091EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{45FB2189-EF61-422D-94D0-2AD7ACBF8218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45FB2189-EF61-422D-94D0-2AD7ACBF8218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45FB2189-EF61-422D-94D0-2AD7ACBF8218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D0590B1-450B-4D08-974C-C7911D4091EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D0590B1-450B-4D08-974C-C7911D4091EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D0590B1-450B-4D08-974C-C7911D4091EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D0590B1-450B-4D08-974C-C7911D4091EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
