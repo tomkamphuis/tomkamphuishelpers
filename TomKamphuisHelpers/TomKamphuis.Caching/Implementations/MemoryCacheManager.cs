@@ -4,9 +4,9 @@ using TomKamphuis.Caching.Interfaces;
 
 namespace TomKamphuis.Caching.Implementations
 {
-    public class MemoryCacheManager : ICacheManager
+    public sealed class MemoryCacheManager : ICacheManager
     {
-        private static ObjectCache _cache = MemoryCache.Default;
+        private static readonly ObjectCache _cache = MemoryCache.Default;
 
         public void Add(string key, object value, CacheItemPolicy policy)
         {
