@@ -20,6 +20,17 @@ namespace TomKamphuis.Caching.Implementations
             _cache.Add(key, value, policy);
         }
 
+        public void AddOrOverwrite(string key, object value, CacheItemPolicy policy)
+        {
+            if(!_cache.Contains(key))
+            {
+                this.Add(key, value, policy);
+                return;
+            }
+
+            _cache[key] = value;
+        }
+
         public bool Contains(string key)
         {
             return _cache.Get(key) != null;
@@ -37,17 +48,25 @@ namespace TomKamphuis.Caching.Implementations
 
         public void Remove(string key)
         {
+            if(!this.Contains(key))
+            {
+                throw new KeyNotFoundException();
+            }
+
             _cache.Remove(key);
+        }
+
+        public void Remove(IList<string> keys)
+        {
+            foreach (string key in keys)
+            {
+                this.Remove(key);
+            }
         }
 
         public void Clear()
         {
-            IList<string> cacheKeys = _cache.Select(kvp => kvp.Key).ToList();
-
-            foreach(string cacheKey in cacheKeys)
-            {
-                this.Remove(cacheKey);
-            }
+            this.Remove(_cache.Select(kvp => kvp.Key).ToList());
         }
 
         public object this[string key]

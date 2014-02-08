@@ -1,4 +1,5 @@
-﻿using System.Runtime.Caching;
+﻿using System.Collections.Generic;
+using System.Runtime.Caching;
 
 namespace TomKamphuis.Caching.Interfaces
 {
@@ -8,6 +9,11 @@ namespace TomKamphuis.Caching.Interfaces
         /// Add a new object into the cache
         /// </summary>
         void Add(string key, object value, CacheItemPolicy policy);
+
+        /// <summary>
+        /// Overwrite an object or adds a new object into the cache
+        /// </summary>
+        void AddOrOverwrite(string key, object value, CacheItemPolicy policy);
 
         /// <summary>
         /// Check whether the key is contained by the cache
@@ -28,6 +34,11 @@ namespace TomKamphuis.Caching.Interfaces
         /// Removes the object that is referenced by the given key
         /// </summary>
         void Remove(string key);
+
+        /// <summary>
+        /// Removes all objects that is referenced by the given key-collection
+        /// </summary>
+        void Remove(IList<string> keys);
 
         /// <summary>
         /// Clears the whole cache
