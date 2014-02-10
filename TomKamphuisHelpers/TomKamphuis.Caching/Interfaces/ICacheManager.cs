@@ -36,7 +36,7 @@ namespace TomKamphuis.Caching.Interfaces
         void Remove(string key);
 
         /// <summary>
-        /// Removes all objects that is referenced by the given key-collection
+        /// Removes all objects that are referenced by the given key-collection
         /// </summary>
         void Remove(IList<string> keys);
 

@@ -43,7 +43,14 @@ namespace TomKamphuis.Caching.Implementations
 
         public T Get<T>(string key)
         {
-            return (T)_cache.Get(key);
+            var currentObject = _cache.Get(key);
+
+            if(currentObject == null)
+            {
+                return default(T);
+            }
+
+            return (T)currentObject;
         }
 
         public void Remove(string key)
