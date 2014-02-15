@@ -75,12 +75,13 @@ namespace TomKamphuis.Caching.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(KeyNotFoundException))]
-        public void MemoryCacheManager_Should_Throw_Exception_When_Trying_To_Remove_A_Non_Excisting_Key()
+        public void MemoryCacheManager_Should_Not_Throw_Exception_When_Trying_To_Remove_A_Non_Excisting_Key()
         {
             ICacheManager cacheManager = new MemoryCacheManager();
 
             cacheManager.Remove("Test");
+
+            Assert.IsFalse(cacheManager.Contains("Test"));
         }
 
         [TestMethod]

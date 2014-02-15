@@ -55,11 +55,6 @@ namespace TomKamphuis.Caching.Implementations
 
         public void Remove(string key)
         {
-            if(!this.Contains(key))
-            {
-                throw new KeyNotFoundException();
-            }
-
             _cache.Remove(key);
         }
 
