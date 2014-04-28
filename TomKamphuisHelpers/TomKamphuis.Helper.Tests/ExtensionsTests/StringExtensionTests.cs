@@ -116,5 +116,45 @@ namespace TomKamphuis.Helper.ExtensionsTests.Tests
         {
             string text = string.Empty.RemoveHTML();
         }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_String()
+        {
+            string text = "ASSEN";
+
+            Assert.AreEqual("Assen", text.ToDutchCityName());
+        }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_String_For_Every_Part()
+        {
+            string text = "DEN BOSCH";
+
+            Assert.AreEqual("Den Bosch", text.ToDutchCityName());
+        }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_String_For_Funny_Name()
+        {
+            string text = "'S GRAVENHAGE";
+
+            Assert.AreEqual("'s Gravenhage", text.ToDutchCityName());
+        }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_String_For_Funny_Names()
+        {
+            string text = "'S DEN BOSCH";
+
+            Assert.AreEqual("'s Den Bosch", text.ToDutchCityName());
+        }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_String_For_Saint_Names()
+        {
+            string text = "ST. ANNAGESTEL";
+
+            Assert.AreEqual("St. Annagestel", text.ToDutchCityName());
+        }
     }
 }

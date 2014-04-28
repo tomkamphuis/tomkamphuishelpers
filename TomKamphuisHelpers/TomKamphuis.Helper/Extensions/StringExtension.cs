@@ -36,6 +36,41 @@ namespace TomKamphuis.Helper.Extensions
         }
 
         /// <summary>
+        /// The first characters of your city name will be upper-cased according to Dutch preferences.
+        /// </summary>
+        public static string ToDutchCityName(this string city)
+        {
+            city = city.ToLower();
+
+            if (city.Contains(" "))
+            {
+                // BV Den Bosch
+
+                string[] cityParts = city.Split(' ');
+                city = string.Empty;
+
+                foreach (string part in cityParts)
+                {
+                    city += part.FirstCharToUpper() + " ";
+                }
+
+                city = city.Trim();
+            }
+
+            if (city.StartsWith("'"))
+            {
+                // BV 's Gravenhage
+
+                string cityPartOne = city.Substring(0, 3);
+                string cityPartTwo = city.Substring(3, city.Length - 3);
+
+                city = cityPartOne + cityPartTwo.FirstCharToUpper();
+            }
+
+            return city.FirstCharToUpper();
+        }
+
+        /// <summary>
         /// The string you supply will be entirely ready for URL usage with no special characters or spaces left in the string.
         /// </summary>
         public static string ToUrlSafeString(this string input)
