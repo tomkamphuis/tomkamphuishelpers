@@ -164,5 +164,51 @@ namespace TomKamphuis.Helper.ExtensionsTests.Tests
 
             Assert.AreEqual("Berkel-Enschot", text.ToDutchCityName());
         }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstTwoChar_Uppercased_String_When_IJ_In_Name()
+        {
+            string text = "IJSSELSTEIN";
+
+            Assert.AreEqual("IJsselstein", text.ToDutchCityName());
+        }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_With_Province_Abbreviations_Uppercased()
+        {
+            string text = "OOSTERHOUT NB";
+            Assert.AreEqual("Oosterhout NB", text.ToDutchCityName());
+
+            text = "OOSTERHOUT NH";
+            Assert.AreEqual("Oosterhout NH", text.ToDutchCityName());
+
+            text = "OOSTERHOUT ZH";
+            Assert.AreEqual("Oosterhout ZH", text.ToDutchCityName());
+
+            text = "NIJKERK GLD";
+            Assert.AreEqual("Nijkerk Gld", text.ToDutchCityName());
+        }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_With_Couple_Words_Lowercased()
+        {
+            string text = "CAPELLE AAN DEN IJSSEL";
+            Assert.AreEqual("Capelle aan den IJssel", text.ToDutchCityName());
+
+            text = "BERKEL EN RODENRIJS";
+            Assert.AreEqual("Berkel en Rodenrijs", text.ToDutchCityName());
+
+            text = "BERGEN OP ZOOM";
+            Assert.AreEqual("Bergen op Zoom", text.ToDutchCityName());
+
+            text = "HORST AAN DE MAAS";
+            Assert.AreEqual("Horst aan de Maas", text.ToDutchCityName());
+
+            text = "WIJK BIJ DUURSTEDE";
+            Assert.AreEqual("Wijk bij Duurstede", text.ToDutchCityName());
+
+            text = "DE RONDE VENEN";
+            Assert.AreEqual("De Ronde Venen", text.ToDutchCityName());
+        }
     }
 }

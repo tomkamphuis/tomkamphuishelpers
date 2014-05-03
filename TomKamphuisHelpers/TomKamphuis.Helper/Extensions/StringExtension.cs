@@ -35,6 +35,43 @@ namespace TomKamphuis.Helper.Extensions
             return input.First().ToString().ToUpper() + string.Join(string.Empty, input.Skip(1));
         }
 
+        public static string FirstCharToUpperDutchCheck(this string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                throw new ArgumentNullException("input");
+            }
+
+            // Oosterhout NB
+            switch(input.ToLower())
+            {
+                case "nb":
+                case "nh":
+                case "zh":
+                    return input.ToUpper();
+            }
+
+            // aan, op, den, de: Cappelle aan den IJssel
+            switch (input.ToLower())
+            {
+                case "aan":
+                case "den":
+                case "de":
+                case "op":
+                case "en":
+                case "bij":
+                    return input.ToLower();
+            }
+
+            // IJsselstein
+            if(input.StartsWith("ij", StringComparison.OrdinalIgnoreCase))
+            {
+                return input.Substring(0, 2).ToString().ToUpper() + string.Join(string.Empty, input.Skip(2));
+            }
+
+            return input.FirstCharToUpper();
+        }
+
         /// <summary>
         /// The first characters of your city name will be upper-cased according to Dutch preferences.
         /// </summary>
@@ -51,7 +88,7 @@ namespace TomKamphuis.Helper.Extensions
 
                 foreach (string part in cityParts)
                 {
-                    city += part.FirstCharToUpper() + " ";
+                    city += part.FirstCharToUpperDutchCheck() + " ";
                 }
 
                 city = city.Trim();
@@ -66,7 +103,7 @@ namespace TomKamphuis.Helper.Extensions
 
                 foreach (string part in cityParts)
                 {
-                    city += part.FirstCharToUpper() + "-";
+                    city += part.FirstCharToUpperDutchCheck() + "-";
                 }
 
                 city = city.Substring(0, city.Length - 1);
@@ -79,10 +116,10 @@ namespace TomKamphuis.Helper.Extensions
                 string cityPartOne = city.Substring(0, 3);
                 string cityPartTwo = city.Substring(3, city.Length - 3);
 
-                city = cityPartOne + cityPartTwo.FirstCharToUpper();
+                city = cityPartOne + cityPartTwo.FirstCharToUpperDutchCheck();
             }
 
-            return city.FirstCharToUpper();
+            return city.FirstCharToUpperDutchCheck();
         }
 
         /// <summary>
