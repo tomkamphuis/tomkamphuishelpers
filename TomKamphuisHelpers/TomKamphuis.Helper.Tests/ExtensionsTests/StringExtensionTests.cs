@@ -156,5 +156,13 @@ namespace TomKamphuis.Helper.ExtensionsTests.Tests
 
             Assert.AreEqual("St. Annagestel", text.ToDutchCityName());
         }
+
+        [TestMethod]
+        public void ToDutchCityName_Should_Return_FirstChar_Uppercased_String_For_Names_With_A_Line()
+        {
+            string text = "BERKEL-ENSCHOT";
+
+            Assert.AreEqual("Berkel-Enschot", text.ToDutchCityName());
+        }
     }
 }

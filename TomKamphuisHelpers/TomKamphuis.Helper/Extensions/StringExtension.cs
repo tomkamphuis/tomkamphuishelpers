@@ -57,6 +57,21 @@ namespace TomKamphuis.Helper.Extensions
                 city = city.Trim();
             }
 
+            if (city.Contains("-"))
+            {
+                // BV. Berkel-Enschot
+
+                string[] cityParts = city.Split('-');
+                city = string.Empty;
+
+                foreach (string part in cityParts)
+                {
+                    city += part.FirstCharToUpper() + "-";
+                }
+
+                city = city.Substring(0, city.Length - 1);
+            }
+
             if (city.StartsWith("'"))
             {
                 // BV 's Gravenhage
