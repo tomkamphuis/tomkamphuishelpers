@@ -53,13 +53,16 @@ namespace TomKamphuis.Caching.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void MemoryCacheManager_Should_Return_Throw_Exception_When_Key_In_Cache()
+        public void MemoryCacheManager_Should_Return_Last_Added_Value_To_Cache()
         {
             ICacheManager cacheManager = new MemoryCacheManager();
 
             cacheManager.Add("Test", "Dit is de waarde...", new CacheItemPolicy());
             cacheManager.Add("Test", "Dit is de tweede waarde...", new CacheItemPolicy());
+
+            string value = cacheManager.Get<string>("Test");
+
+            Assert.AreSame("Dit is de tweede waarde...", value);
         }
 
         [TestMethod]

@@ -14,7 +14,7 @@ namespace TomKamphuis.Caching.Implementations
         {
             if(_cache.Contains(key))
             {
-                throw new ArgumentException("Can't add a key that's already in cache!", key);
+                this.Remove(key);
             }
 
             _cache.Add(key, value, policy);
