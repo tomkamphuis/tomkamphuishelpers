@@ -26,7 +26,7 @@ namespace TomKamphuis.Helper.Tests.HelpersTests
         [TestMethod]
         public void In_Method_Should_Return_True_When_Int_Value_In_List()
         {
-            int currentNumber = 7;
+            int currentNumber = 5;
             List<int> allNumbers = new List<int> {
                 1,
                 2,
